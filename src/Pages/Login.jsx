@@ -1,14 +1,22 @@
 import React from "react";
 import { Link } from "react-router";
-
+import loginAnimation from "../assets/Lotties/Login.json";
+import Lottie from "lottie-react";
 const Login = () => {
   return (
-    <div className="min-h-screen bg-gray-900">
-      <div className="flex flex-col w-lg h-150 mx-auto p-6 rounded-md sm:p-10 dark:bg-gray-50 dark:text-gray-800">
+    <div className="min-h-screen grid grid-cols-2 mx-auto  bg-gray-900">
+      <div className="mx-auto py-15">
+        <Lottie
+          animationData={loginAnimation}
+        style={{width:'400px'}}
+          loop={true}
+        ></Lottie>
+      </div>
+      <div className="flex flex-col w-3/4 mx-auto p-6 rounded-md sm:p-10">
         <div className="mb-8 text-center">
           <h1 className="my-3 text-4xl font-bold">Login</h1>
           <p className="text-sm dark:text-gray-600">
-           Login to access your account
+            Login to access your account
           </p>
         </div>
         <form noValidate="" action="" className="space-y-12">
