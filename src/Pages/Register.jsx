@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 
 const Register = () => {
   return (
@@ -59,7 +60,7 @@ const Register = () => {
                   Register
                 </h3>
                 <form>
-                    {/* Name */}
+                  {/* Name */}
                   <div className="mb-1 sm:mb-2">
                     <label
                       htmlFor="name"
@@ -82,7 +83,7 @@ const Register = () => {
                       htmlFor="photo"
                       className="inline-block mb-1 font-medium"
                     >
-                     Photo URL
+                      Photo URL
                     </label>
                     <input
                       placeholder="Photo URL"
@@ -116,7 +117,7 @@ const Register = () => {
                       htmlFor="password"
                       className="inline-block mb-1 font-medium"
                     >
-                     Password
+                      Password
                     </label>
                     <input
                       placeholder="*********"
@@ -127,7 +128,7 @@ const Register = () => {
                       name="password"
                     />
                   </div>
-                  
+
                   <div className="mt-4 mb-2 sm:mb-4">
                     <button
                       type="submit"
@@ -136,8 +137,16 @@ const Register = () => {
                       Register
                     </button>
                   </div>
-                  
                 </form>
+                 <p className="text-sm text-center p-2 text-white">
+            <span className="p-1">Already have an account? </span>
+            <Link
+              to={"/login"}
+              className="hover:underline text-[#cc1f1f]"
+            >
+              Login
+            </Link>
+          </p>
               </div>
             </div>
           </div>
