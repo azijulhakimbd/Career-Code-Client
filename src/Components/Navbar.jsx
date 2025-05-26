@@ -1,15 +1,41 @@
-import React from "react";
+import React, { use } from "react";
 import { Link, NavLink } from "react-router";
+import { AuthContext } from "../Contexts/AuthContext";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
-    const links =<>
-
-    <li><NavLink to={'/'}>Home</NavLink></li>
-    <li><NavLink to={'/'}>Home</NavLink></li>
-    <li><NavLink to={'/'}>Home</NavLink></li>
-    <li><NavLink to={'/'}>Home</NavLink></li>
-    <li><NavLink to={'/'}>Home</NavLink></li>
+  const { user, logout } = use(AuthContext);
+  const handleLogout = () => {
+    logout().then((result) => {
+      console.log(result);
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Logout Successfully",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+    });
+  };
+  const links = (
+    <>
+      <li>
+        <NavLink to={"/"}>Home</NavLink>
+      </li>
+      <li>
+        <NavLink to={"/"}>Home</NavLink>
+      </li>
+      <li>
+        <NavLink to={"/"}>Home</NavLink>
+      </li>
+      <li>
+        <NavLink to={"/"}>Home</NavLink>
+      </li>
+      <li>
+        <NavLink to={"/"}>Home</NavLink>
+      </li>
     </>
+  );
   return (
     <div className="navbar bg-base-100 shadow-sm">
       <div className="navbar-start">
@@ -35,19 +61,29 @@ const Navbar = () => {
             tabIndex={0}
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
           >
-           {links}
+            {links}
           </ul>
         </div>
         <a className="btn btn-ghost text-xl">daisyUI</a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-         {links}
-        </ul>
+        <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <Link className="btn bg-blue-500" to={'/register'}>Register</Link>
-        <Link className="btn bg-blue-500" to={'/login'}>Login</Link>
+        {user ? (
+          <button onClick={handleLogout} className="btn bg-red-400">
+            Logout
+          </button>
+        ) : (
+          <>
+            <Link className="btn bg-blue-500" to={"/register"}>
+              Register
+            </Link>
+            <Link className="btn bg-blue-500" to={"/login"}>
+              Login
+            </Link>
+          </>
+        )}
       </div>
     </div>
   );
