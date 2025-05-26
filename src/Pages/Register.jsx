@@ -1,8 +1,28 @@
 import Lottie from "lottie-react";
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router";
-import registerAnimation from '../assets/Lotties/Register.json'
+import registerAnimation from "../assets/Lotties/Register.json";
+import { AuthContext } from "../Contexts/AuthContext";
+import Swal from "sweetalert2";
 const Register = () => {
+  const { createUser } = useContext(AuthContext);
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    // const name=form.name.value;
+    // const photo =form.photo.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    createUser(email, password).then((result) => {
+      const user = result.user;
+      console.log(user);
+      Swal.fire({
+        title: "Register Successfully",
+        icon: "success",
+        draggable: true,
+      });
+    });
+  };
   return (
     <div className="overflow-hidden bg-gray-900 min-h-screen my-auto">
       <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
@@ -38,7 +58,7 @@ const Register = () => {
                 <h3 className="mb-4 text-xl font-semibold sm:text-center sm:mb-6 sm:text-2xl">
                   Register
                 </h3>
-                <form>
+                <form onSubmit={handleRegister}>
                   {/* Name */}
                   <div className="mb-1 sm:mb-2">
                     <label
@@ -103,7 +123,7 @@ const Register = () => {
                       required
                       type="password"
                       className="flex-grow w-full h-12 px-4 mb-2 transition duration-200  border border-gray-300 rounded shadow-sm appearance-none focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
-                      id="email"
+                      id="password"
                       name="password"
                     />
                   </div>
@@ -117,15 +137,15 @@ const Register = () => {
                     </button>
                   </div>
                 </form>
-                 <p className="text-sm text-center p-2 text-white">
-            <span className="p-1">Already have an account? </span>
-            <Link
-              to={"/login"}
-              className="hover:underline text-[#cc1f1f]"
-            >
-              Login
-            </Link>
-          </p>
+                <p className="text-sm text-center p-2 text-white">
+                  <span className="p-1">Already have an account? </span>
+                  <Link
+                    to={"/login"}
+                    className="hover:underline text-[#cc1f1f]"
+                  >
+                    Login
+                  </Link>
+                </p>
               </div>
             </div>
           </div>
