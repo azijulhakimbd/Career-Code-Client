@@ -20,9 +20,10 @@ const Banner = () => {
           />
         </div>
         <div>
-          <motion.h1 animate={{ rotate: -90 }} className="text-5xl font-bold">
+          <motion.h1 animate={{ rotate: 700,transition:{duration:5} }} className="text-5xl font-bold">
             Box Office News!
           </motion.h1>
+          
           <p className="py-6">
             Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
             excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
