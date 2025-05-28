@@ -1,2 +1,11 @@
 @import "tailwindcss";
 @plugin "daisyui";
+.f1 {
+  font-family: "Poetsen One", sans-serif;
+  
+}
+.f-p {
+  font-family: "DM Serif Text", serif;
+  font-weight: 800;
+  
+}
