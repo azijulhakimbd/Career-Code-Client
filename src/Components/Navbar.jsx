@@ -2,6 +2,7 @@ import React, { use } from "react";
 import { Link, NavLink } from "react-router";
 import { AuthContext } from "../Contexts/AuthContext";
 import Swal from "sweetalert2";
+import ThemeToggle from "../Pages/ThemeToggle";
 
 const Navbar = () => {
   const { user, logout } = use(AuthContext);
@@ -70,6 +71,7 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
+        <ThemeToggle></ThemeToggle>
         {user ? (
           <button onClick={handleLogout} className="btn bg-red-400">
             Logout
