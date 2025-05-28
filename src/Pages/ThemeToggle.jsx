@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { CiDark, CiLight } from "react-icons/ci";
 
 const ThemeToggle = () => {
   const [theme, setTheme] = useState("light");
@@ -12,7 +13,7 @@ const ThemeToggle = () => {
       className="btn btn-sm "
       onClick={() => setTheme(theme === "light" ? "dark" : "light")}
     >
-       {theme === "light" ? "🌙" : "☀️"}
+       {theme === "light" ? <CiDark size={30} /> : <CiLight size={30} />}
     </button>
   );
 };
