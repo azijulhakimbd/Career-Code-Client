@@ -6,7 +6,7 @@ import {
   FaMapMarkerAlt,
   FaUser,
 } from 'react-icons/fa';
-import { useLoaderData } from 'react-router'; 
+import { Link, useLoaderData } from 'react-router'; 
 
 const JobDetails = () => {
   const {
@@ -95,7 +95,7 @@ const JobDetails = () => {
             <FaEnvelope className="text-success" /> {hr_email}
           </div>
         </div>
-        <button className="btn btn-success text-white">Apply Now</button>
+        <Link to={`/jobApply/${_id}`}><button className="btn btn-success text-white">Apply Now</button></Link>
       </div>
     </div>
   );

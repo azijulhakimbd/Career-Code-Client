@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import loginAnimation from "../assets/Lotties/Login.json";
 import Lottie from "lottie-react";
 import { AuthContext } from "../Contexts/AuthContext";
@@ -8,10 +8,14 @@ import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
   const { signIn, loginWithGoogle } = useContext(AuthContext);
+  const location =useLocation();
+  const navigate = useNavigate();
+  const from =location.state || '/'
 
   const handleGoogleLogin = () => {
     loginWithGoogle()
       .then((result) => {
+        navigate(from || '/')
         console.log(result.user);
         Swal.fire({
           title: "Google Login Successfully",
@@ -31,6 +35,7 @@ const Login = () => {
     const password = form.password.value;
 
     signIn(email, password).then((result) => {
+      navigate(from)
       Swal.fire({
         title: "Login Successfully",
         icon: "success",

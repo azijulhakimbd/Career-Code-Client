@@ -5,7 +5,7 @@ const Contact = () => {
     <section className="bg-base-100 text-base-content transition-colors duration-300">
       <div className="container px-6 py-12 mx-auto">
         <div>
-          <p className="font-medium text-primary">Contact us</p>
+          <p className="font-medium text-success">Contact us</p>
 
           <h1 className="mt-2 text-2xl font-semibold md:text-3xl">
             Chat to our friendly team
@@ -98,8 +98,8 @@ const Contact = () => {
                   </svg>
                 </span>
                 <h2 className="mt-4 text-base font-medium">{title}</h2>
-                <p className="mt-2 text-sm text-base-content/70">{desc}</p>
-                <p className="mt-2 text-sm text-primary">{value}</p>
+                <p className="mt-2 text-sm text-success">{desc}</p>
+                <p className="mt-2 text-sm text-success">{value}</p>
               </div>
             ))}
           </div>
