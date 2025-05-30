@@ -1,7 +1,8 @@
 import React from "react";
 import UseAuth from "../Hooks/UseAuth";
 import { useParams } from "react-router";
-import axios from "axios"
+import axios from "axios";
+import Swal from "sweetalert2";
 
 const JobApply = () => {
   const { user } = UseAuth();
@@ -21,9 +22,20 @@ const JobApply = () => {
       github,
     };
 
-    axios.post("http://localhost:3000/applications", application)
+    axios
+      .post("http://localhost:3000/applications", application)
       .then((res) => {
         console.log(res.data);
+
+        if (res.data.insertedId) {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Your application has been Submitted",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
       })
       .catch((error) => {
         console.log(error);
@@ -35,13 +47,13 @@ const JobApply = () => {
       <h1 className="text-success text-4xl text-center p-5">
         Apply For this Job: <></>
       </h1>
-      <form onSubmit={handleApply}>
-        <fieldset className="fieldset bg-base-200 border-base-300 rounded-box  border p-4">
-          <label className="label">Linkedin Profile Link</label>
+      <form onSubmit={handleApply} className="mx-auto">
+        <fieldset className="fieldset mx-auto lg:px-200 lg:py-50 bg-base-200 border-base-300 rounded-box  border p-4">
+          <label className="label text-center">Linkedin Profile Link</label>
           <input
             type="url"
             className="input"
-            name="linkedin"
+            name="linkedin" required
             placeholder="your Linkedin Profile Link"
           />
 
@@ -49,7 +61,7 @@ const JobApply = () => {
           <input
             type="url"
             name="github"
-            className="input"
+            className="input" required
             placeholder="your Github Profile Link"
           />
 
@@ -57,10 +69,10 @@ const JobApply = () => {
           <input
             type="url"
             className="input"
-            name="resume"
+            name="resume" required
             placeholder="Resume Link"
           />
-          <input type="submit" className="btn w-full" value="Apply" />
+          <input type="submit" className="btn w-full bg-success" value="Apply" />
         </fieldset>
       </form>
     </div>
