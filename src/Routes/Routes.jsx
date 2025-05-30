@@ -8,6 +8,7 @@ import HotJobs from "../Components/HotJobs";
 import PrivateRoutes from "./PrivateRoutes";
 import JobApply from "../Pages/JobApply";
 import MyApplications from "../Pages/MyApplications";
+import ErrorPages from "../Pages/ErrorPages";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -47,5 +48,8 @@ export const router = createBrowserRouter([
         Component: Login,
       },
     ],
-  },
+  },{
+    path:'/*',
+    Component:ErrorPages
+  }
 ]);

@@ -4,14 +4,15 @@ import ApplicationList from "../Components/ApplicationList";
 import { myApplicationPromise } from "../API/ApplicationApi";
 
 
+
 const MyApplications = () => {
   const { user } = UseAuth();
   return (
     <div>
       <Suspense
         fallback={
-       
-            <span className="loading loading-ring loading-xl"></span>
+       <div className="min-h-screen flex justify-center items-center"><span className="loading loading-ring loading-xl"></span></div>
+            
           
         }
       >

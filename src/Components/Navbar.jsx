@@ -23,21 +23,20 @@ const Navbar = () => {
       <li>
         <NavLink to={"/"}>Home</NavLink>
       </li>
+      {/* for applicant */}
      {
       user && <>
        <li>
         <NavLink to={"/myapplications"}>My Applications</NavLink>
       </li></>
      }
-      <li>
-        <NavLink to={"/"}>Home</NavLink>
-      </li>
-      <li>
-        <NavLink to={"/"}>Home</NavLink>
-      </li>
-      <li>
-        <NavLink to={"/"}>Home</NavLink>
-      </li>
+     {/* for recruit */}
+     {
+      user &&
+      <> <li> <NavLink to={"/addJob"}>Add Job</NavLink>
+      </li></>
+     }
+      
     </>
   );
   return (
@@ -63,7 +62,7 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 text-success mt-3 w-52 p-2 shadow"
           >
             {links}
           </ul>
@@ -71,7 +70,7 @@ const Navbar = () => {
         <a className="btn btn-ghost text-4xl f1 text-green-500 font-extrabold">Job Hunter</a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{links}</ul>
+        <ul className="menu menu-horizontal text-success px-1">{links}</ul>
       </div>
       <div className="navbar-end">
         <ThemeToggle></ThemeToggle>
