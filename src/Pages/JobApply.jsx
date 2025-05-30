@@ -23,7 +23,10 @@ const JobApply = () => {
     };
 
     axios
-      .post("http://localhost:3000/applications", application)
+      .post(
+        "https://career-code-server-rouge.vercel.app/applications",
+        application
+      )
       .then((res) => {
         console.log(res.data);
 
@@ -53,7 +56,8 @@ const JobApply = () => {
           <input
             type="url"
             className="input"
-            name="linkedin" required
+            name="linkedin"
+            required
             placeholder="your Linkedin Profile Link"
           />
 
@@ -61,7 +65,8 @@ const JobApply = () => {
           <input
             type="url"
             name="github"
-            className="input" required
+            className="input"
+            required
             placeholder="your Github Profile Link"
           />
 
@@ -69,10 +74,15 @@ const JobApply = () => {
           <input
             type="url"
             className="input"
-            name="resume" required
+            name="resume"
+            required
             placeholder="Resume Link"
           />
-          <input type="submit" className="btn w-full bg-success" value="Apply" />
+          <input
+            type="submit"
+            className="btn w-full bg-success"
+            value="Apply"
+          />
         </fieldset>
       </form>
     </div>

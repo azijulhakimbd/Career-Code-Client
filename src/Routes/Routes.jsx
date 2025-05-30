@@ -9,6 +9,7 @@ import PrivateRoutes from "./PrivateRoutes";
 import JobApply from "../Pages/JobApply";
 import MyApplications from "../Pages/MyApplications";
 import ErrorPages from "../Pages/ErrorPages";
+import AddJob from "../Pages/AddJob";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -22,17 +23,30 @@ export const router = createBrowserRouter([
         path: "/jobs/:id",
         Component: JobDetails,
         loader: ({ params }) =>
-          fetch(`http://localhost:3000/jobs/${params.id}`),
-      },
-      {path:'/jobApply/:id',
-        element:<PrivateRoutes>
-          <JobApply></JobApply>
-        </PrivateRoutes>
+          fetch(
+            `https://career-code-server-rouge.vercel.app/jobs/${params.id}`
+          ),
       },
       {
-        path:'/myapplications',
+        path: "/jobApply/:id",
+        element: (
+          <PrivateRoutes>
+            <JobApply></JobApply>
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path: "/myapplications",
+        element: (
+          <PrivateRoutes>
+            <MyApplications></MyApplications>
+          </PrivateRoutes>
+        ),
+      },
+      {
+        path:'/addJob',
         element:<PrivateRoutes>
-          <MyApplications></MyApplications>
+          <AddJob></AddJob>
         </PrivateRoutes>
       },
       {
@@ -48,8 +62,9 @@ export const router = createBrowserRouter([
         Component: Login,
       },
     ],
-  },{
-    path:'/*',
-    Component:ErrorPages
-  }
+  },
+  {
+    path: "/*",
+    Component: ErrorPages,
+  },
 ]);

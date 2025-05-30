@@ -17,7 +17,7 @@ const ThemeToggle = () => {
   };
 
   return (
-    <button className="btn btn-sm" onClick={toggleTheme}>
+    <button className="btn" onClick={toggleTheme}>
       {theme === "light" ? <CiDark size={30} /> : <CiLight size={30} />}
     </button>
   );
