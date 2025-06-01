@@ -49,7 +49,7 @@ const JobsCard = ({ job }) => {
           <strong>Type:</strong> {jobType}
         </p>
         <p className="text-sm text-success font-semibold">
-          Salary: ৳{salaryRange.min} - ৳{salaryRange.max} {salaryRange.currency.toUpperCase()}
+          Salary: {salaryRange.min} - {salaryRange.max} {salaryRange.currency.toUpperCase()}
         </p>
 
         {/* Description */}

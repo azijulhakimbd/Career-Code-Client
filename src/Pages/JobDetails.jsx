@@ -55,7 +55,7 @@ const JobDetails = () => {
           <FaCalendarAlt className="text-success" /> Deadline: {applicationDeadline}
         </div>
         <div className="flex items-center gap-2">
-          💰 Salary: ৳{salaryRange.min.toLocaleString()} – ৳{salaryRange.max.toLocaleString()}
+          💰 Salary: {salaryRange.min.toLocaleString()} – {salaryRange.max.toLocaleString()} {salaryRange.currency}
         </div>
       </div>
 

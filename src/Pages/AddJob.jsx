@@ -49,6 +49,7 @@ const AddJob = () => {
         Add Your Job
       </h1>
       <form onSubmit={handleAddJob} className="lg:mx-170 py-10">
+        {/* Job Basic Info */}
         <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-full border p-4">
           <legend className="fieldset-legend">Job Basic Info</legend>
 
