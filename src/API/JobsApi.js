@@ -1,5 +1,6 @@
-export const jobsCreatedByPromise = (email) => {
+export const jobsCreatedByPromise = email => {
   return fetch(
     `https://career-code-server-rouge.vercel.app/jobs?email=${email}`
-  );
+  )
+  .then(res =>res.json());
 };

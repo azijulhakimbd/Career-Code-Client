@@ -4,12 +4,9 @@ import { jobsCreatedByPromise } from "../API/JobsApi";
 import UseAuth from "../Hooks/UseAuth";
 
 const MyPostedJobs = () => {
-    const {user}= UseAuth();
+  const { user } = UseAuth();
   return (
     <div className="min-h-screen">
-      <h2 className="text-center py-20 text-4xl text-success font-bold">
-        My Posted Jobs:
-      </h2>
       <Suspense
         fallback={
           <div className="min-h-screen flex justify-center items-center">
@@ -17,7 +14,9 @@ const MyPostedJobs = () => {
           </div>
         }
       >
-        <JobsList jobsCreatedByPromise={jobsCreatedByPromise(user.email)}></JobsList>
+        <JobsList
+          jobsCreatedByPromise={jobsCreatedByPromise(user.email)}
+        ></JobsList>
       </Suspense>
     </div>
   );
