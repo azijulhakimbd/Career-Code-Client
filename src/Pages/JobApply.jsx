@@ -46,12 +46,12 @@ const JobApply = () => {
   };
 
   return (
-    <div className="mx-auto">
+    <div className="mx-auto min-h-screen">
       <h1 className="text-success text-4xl text-center p-5">
-        Apply For this Job: <></>
+        Apply For this Job <></>
       </h1>
       <form onSubmit={handleApply} className="mx-auto">
-        <fieldset className="fieldset mx-auto lg:px-200 lg:py-50 bg-base-200 border-base-300 rounded-box  border p-4">
+        <fieldset className="fieldset mx-auto lg:px-200 lg:py-50 bg-base-100 p-4">
           <label className="label text-center">Linkedin Profile Link</label>
           <input
             type="url"

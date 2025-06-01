@@ -1,7 +1,7 @@
 import React, { use } from "react";
-import {Link} from "react-router"
+import { Link } from "react-router";
 const JobsList = ({ jobsCreatedByPromise }) => {
-  const jobs =use(jobsCreatedByPromise)
+  const jobs = use(jobsCreatedByPromise);
 
   return (
     <div className="w-11/12 mx-auto">
@@ -21,10 +21,17 @@ const JobsList = ({ jobsCreatedByPromise }) => {
           <tbody>
             {jobs.map((job, index) => (
               <tr key={job._id}>
-                <th>{index +1}</th>
+                <th>{index + 1}</th>
                 <td>{job.title}</td>
                 <td>{job.applicationDeadline}</td>
-                <td><Link className="btn btn-success" to={`/applications/${job._id}`}>View Applications</Link></td>
+                <td>
+                  <Link
+                    className="btn btn-success"
+                    to={`/applications/${job._id}`}
+                  >
+                    View Applications
+                  </Link>
+                </td>
               </tr>
             ))}
           </tbody>

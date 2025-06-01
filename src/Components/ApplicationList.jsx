@@ -6,7 +6,7 @@ const ApplicationList = ({ myApplicationPromise }) => {
   console.log(applications);
 
   return (
-    <div className="py-20 w-11/12 mx-auto">
+    <div className="py-20 w-11/12 mx-auto min-h-screen">
       <h2 className="text-center py-5 text-success font-bold text-4xl">
         Applied jobs :{applications.length}
       </h2>
