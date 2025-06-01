@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import {
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
@@ -44,6 +45,18 @@ const AuthProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(false);
+      // if (currentUser?.email) {
+      //   const userData = { email: currentUser.email };
+      //   axios
+      //     .post("https://career-code-server-rouge.vercel.app/", userData)
+      //     .then((res) => {
+      //       const token =res.data.token;
+      //       localStorage.setItem('token', token)
+      //     })
+      //     .catch((error) => {
+      //       console.log(error);
+      //     });
+      // }
     });
     return () => unsubscribe();
   }, []);

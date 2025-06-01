@@ -1,28 +1,48 @@
 import React from "react";
 import UseAuth from "../Hooks/UseAuth";
-
+import axios from "axios";
+import Swal from "sweetalert2"
 const AddJob = () => {
-    const {user}=UseAuth();
-    const handleAddJob = e=>{
-        e.preventDefault();
-        const form = e.target;
-        const formData =new FormData(form);
-       const data =Object.fromEntries(formData.entries());
+  const { user } = UseAuth();
+  const handleAddJob = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
     //    process salary range data
-    const {min,max,currency, ...newJob} =data;
-       newJob.salaryRange ={min,max,currency}
+    const { min, max, currency, ...newJob } = data;
+    newJob.salaryRange = { min, max, currency };
 
     //    Process requirements
-    const requirementsString =newJob.requirements;
-    const requirememtsDirty = requirementsString.split(',')
-    const requirementsClean = requirememtsDirty.map(req =>req.trim())
-    newJob.requirements=requirementsClean;
+    const requirementsString = newJob.requirements;
+    const requirememtsDirty = requirementsString.split(",");
+    const requirementsClean = requirememtsDirty.map((req) => req.trim());
+    newJob.requirements = requirementsClean;
     //  Process responsibilities
-    newJob.responsibilities= newJob.responsibilities.split(',').map(res =>res.trim())
+    newJob.responsibilities = newJob.responsibilities
+      .split(",")
+      .map((res) => res.trim());
     console.log(newJob);
-    
-        
-    }
+    // Status
+    newJob.status = "active";
+    // save job to the database
+    axios
+      .post("https://career-code-server-rouge.vercel.app/jobs", newJob)
+      .then((res) => {
+        if (res.data.insertedId) {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Add job Successfully",
+            showConfirmButton: false,
+            timer: 1500,
+          });
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div className="min-h-screen mx-auto w-11/12">
       <h1 className="text-center text-4xl text-success font-bold p-10">
@@ -57,7 +77,7 @@ const AddJob = () => {
           />
           <label className="label">Company Logo</label>
           <input
-            type="text"
+            type="url"
             name="company_logo"
             className="input"
             placeholder="Company Logo URL"
