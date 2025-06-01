@@ -47,6 +47,7 @@ export const router = createBrowserRouter([
       },
       {
         path:'/applications/:job_id',
+        loader:({params})=> fetch(`https://career-code-server-rouge.vercel.app/applications/job/${params.job_id}`),
         element:<PrivateRoutes>
           <ViewApplications></ViewApplications>
         </PrivateRoutes>
