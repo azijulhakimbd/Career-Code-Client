@@ -5,16 +5,17 @@ const HotJobs = ({ jobsPromise }) => {
   const jobs = use(jobsPromise);
 
   return (
-    <div>
-      <h1 className="text-center text-4xl font-bold py-20 text-green-500">
+    <section className="container mx-auto px-4 py-16">
+      <h1 className="text-center text-3xl md:text-4xl font-bold mb-10 text-green-500">
         Hot Jobs of the Day
       </h1>
-      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {jobs.map((job) => (
-          <JobsCard key={job._id} job={job}></JobsCard>
+          <JobsCard key={job._id} job={job} />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

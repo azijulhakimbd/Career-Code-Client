@@ -38,7 +38,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "/myapplications",
+        path: "/my-applications",
         element: (
           <PrivateRoutes>
             <MyApplications></MyApplications>
@@ -53,13 +53,13 @@ export const router = createBrowserRouter([
         </PrivateRoutes>
       },
       {
-        path:'myPostedJobs',
+        path:'my-Posted-Jobs',
         element:<PrivateRoutes>
           <MyPostedJobs></MyPostedJobs>
         </PrivateRoutes>
       },
       {
-        path:'/addJob',
+        path:'/add-Job',
         element:<PrivateRoutes>
           <AddJob></AddJob>
         </PrivateRoutes>
