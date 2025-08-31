@@ -6,7 +6,7 @@ import UseAuth from "../Hooks/UseAuth";
 const MyPostedJobs = () => {
   const { user } = UseAuth();
   return (
-    <div className="min-h-screen lg:py-25">
+    <div className="min-h-screen py-10 lg:py-25">
       <Suspense
         fallback={
           <div className="min-h-screen flex justify-center items-center">

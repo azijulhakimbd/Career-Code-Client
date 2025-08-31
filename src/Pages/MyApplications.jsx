@@ -8,7 +8,7 @@ import { myApplicationPromise } from "../API/ApplicationApi";
 const MyApplications = () => {
   const { user } = UseAuth();
   return (
-    <div className="lg:py-25">
+    <div className="py-10 lg:py-25">
       <Suspense
         fallback={
        <div className="min-h-screen flex justify-center items-center"><span className="loading loading-ring loading-xl"></span></div>

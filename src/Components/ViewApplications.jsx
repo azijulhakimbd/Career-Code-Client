@@ -18,7 +18,7 @@ const ViewApplications = () => {
   };
 
   return (
-    <div className="min-h-screen w-11/12 mx-auto">
+    <div className="min-h-screen py-10 w-11/12 mx-auto">
       <h2 className="text-4xl text-center text-info py-10">
         {applications.length} Applications for: {job_id}
       </h2>

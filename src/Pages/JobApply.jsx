@@ -46,7 +46,7 @@ const JobApply = () => {
   };
 
   return (
-    <div className="mx-auto min-h-screen">
+    <div className="mx-auto py-10 min-h-screen">
       <h1 className="text-success text-4xl text-center p-5">
         Apply For this Job <></>
       </h1>

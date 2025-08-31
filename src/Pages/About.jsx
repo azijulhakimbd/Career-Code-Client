@@ -3,7 +3,7 @@ import { FaUsers, FaBullseye, FaLaptopCode } from "react-icons/fa";
 
 const About = () => {
   return (
-    <div className="bg-base-100 py-25 text-base-content">
+    <div className="bg-base-100 py-10 lg:py-25 text-base-content">
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-16 text-center">
         <h1 className="text-3xl md:text-5xl font-bold text-green-500 mb-6">
