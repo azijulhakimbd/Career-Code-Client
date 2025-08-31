@@ -14,6 +14,7 @@ import MyPostedJobs from "../Pages/MyPostedJobs";
 import ViewApplications from "../Components/ViewApplications";
 import About from "../Pages/About";
 import Contact from "../Components/Contact";
+import AllJobs from "../Pages/AllJobs";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -67,8 +68,8 @@ export const router = createBrowserRouter([
         </PrivateRoutes>
       },
       {
-        path: "/jobs",
-        Component: HotJobs,
+        path: "/all-jobs",
+        Component: AllJobs
       },
       {
         path: "/register",

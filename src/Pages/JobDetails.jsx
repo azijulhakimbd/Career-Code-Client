@@ -27,7 +27,7 @@ const JobDetails = () => {
   } = useLoaderData();
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-base-100 shadow-md rounded-2xl mt-6 border border-base-300 transition-all duration-300">
+    <div className="max-w-5xl mx-auto py-10 p-8 bg-base-100 shadow-md rounded-2xl my-25 border border-base-300 transition-all duration-300">
       {/* Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 border-b border-base-300 pb-4 mb-6">
         <img
