@@ -17,7 +17,7 @@ const JobsCard = ({ job }) => {
   } = job;
 
   return (
-    <div className="card mx-auto w-full md:w-96 bg-base-100 shadow-xl border border-base-300 transition-colors duration-300">
+    <div className="card mx-auto w-full md:w-96 shadow-xl border border-base-300 transition-colors duration-300">
       <div className="card-body">
         {/* Header */}
         <div className="flex items-center gap-4 mb-2">
