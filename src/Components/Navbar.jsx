@@ -83,9 +83,9 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <a className="btn btn-ghost text-4xl f1 text-green-500 font-extrabold">
+         <Link to={"/"}> <a className="btn btn-ghost text-4xl f1 text-green-500 font-extrabold">
             Job Hunter
-          </a>
+          </a></Link>
         </div>
 
         {/* Center Nav */}
