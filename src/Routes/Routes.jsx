@@ -12,6 +12,8 @@ import ErrorPages from "../Pages/ErrorPages";
 import AddJob from "../Pages/AddJob";
 import MyPostedJobs from "../Pages/MyPostedJobs";
 import ViewApplications from "../Components/ViewApplications";
+import About from "../Pages/About";
+import Contact from "../Components/Contact";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -71,6 +73,14 @@ export const router = createBrowserRouter([
       {
         path: "/register",
         Component: Register,
+      },
+      {
+        path: "/about",
+        Component: About
+      },
+      {
+        path: "/contact",
+        Component: Contact
       },
       {
         path: "/login",

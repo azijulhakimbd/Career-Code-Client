@@ -44,8 +44,8 @@ const AddJob = () => {
       });
   };
   return (
-    <div className="min-h-screen mx-auto w-11/12">
-      <h1 className="text-center text-4xl text-success font-bold p-10">
+    <div className="min-h-screen lg:py-25 mx-auto w-11/12">
+      <h1 className="text-center text-4xl text-success font-bold">
         Add Your Job
       </h1>
       <form onSubmit={handleAddJob} className="lg:mx-170 py-10">

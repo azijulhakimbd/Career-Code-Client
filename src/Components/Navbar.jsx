@@ -25,13 +25,6 @@ const Navbar = () => {
       <li>
         <NavLink to={"/"}>Home</NavLink>
       </li>
-      <li>
-        <NavLink to={"/about"}>About Us</NavLink>
-      </li>
-      <li>
-        <NavLink to={"/contact"}>Contact</NavLink>
-      </li>
-
       {/* for applicant */}
       {user && (
         <li>
@@ -50,6 +43,12 @@ const Navbar = () => {
           </li>
         </>
       )}
+         <li>
+        <NavLink to={"/about"}>About Us</NavLink>
+      </li>
+      <li>
+        <NavLink to={"/contact"}>Contact</NavLink>
+      </li>
     </>
   );
 
@@ -100,10 +99,10 @@ const Navbar = () => {
             </button>
           ) : (
             <>
-              <Link className="btn bg-blue-500" to={"/register"}>
+              <Link className="btn btn-primary" to={"/register"}>
                 Register
               </Link>
-              <Link className="btn bg-blue-500" to={"/login"}>
+              <Link className="btn btn-primary" to={"/login"}>
                 Login
               </Link>
             </>
